@@ -4,7 +4,17 @@ import { toast } from "react-toastify";
 const SingleColor = ({ index, color }) => {
   const { hex, weight } = color;
   const saveToClipboard = async () => {
-    // navigator is a specil key word that comes from the brower
+    // navigator is a special key word that comes from the browser
+    if (navigator.clipboard) {
+      try {
+        await navigator.clipboard.writeText(`#${hex}`);
+        toast.success(`Color copied to clipboard`);
+      } catch (error) {
+        toast.error("Failed to copy color to clipboard");
+      }
+    } else {
+      toast.error("Clipboard access not not available");
+    }
   };
 
   return (
