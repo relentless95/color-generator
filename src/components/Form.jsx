@@ -1,4 +1,4 @@
-import React from "react";
+// import React from "react";
 import { useState } from "react";
 
 const Form = ({ addColor }) => {
@@ -11,7 +11,7 @@ const Form = ({ addColor }) => {
   return (
     <section className="container">
       <h4>color generator</h4>
-      <form>
+      <form className="color-form" onSubmit={handleSubmit}>
         <input
           type="color"
           value={color}

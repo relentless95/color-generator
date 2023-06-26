@@ -1,6 +1,9 @@
 import React from 'react'
+import {toast} from "react-toastify";
 
-const SingleColor = () => {
+const SingleColor = ({index, color}) => {
+    const {hex, weight} = color;
+    
   return (
     <div>SingleColor</div>
   )
